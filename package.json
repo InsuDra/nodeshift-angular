@@ -1,0 +1,23 @@
+{
+  "name": "nodeshift-angular",
+  "version": "0.1.0",
+
+  "main": "server.js",
+
+  "engines": {
+    "node": ">= 0.10.17"
+  },
+
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/InsuDra/nodeshift-angular"
+  },
+
+  "private": true,
+  "dependencies": {
+    "ejs": "*",
+    "express": "*",
+    "express-ejs-layouts": "*"
+  },
+  "devDependencies": {}
+}

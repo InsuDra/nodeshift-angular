@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html ng-app="App">
+  <head>
+    <title><%= title %></title>
+
+    <link rel="stylesheet" type="text/css" href="library/common/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="library/foundation/css/foundation.css">
+    <link rel="stylesheet" type="text/css" href="library/foundation/css/social_foundicons.css">
+    <link rel="stylesheet" type="text/css" href="library/foundation/css/general_foundicons.css">
+
+    <link rel="stylesheet" type="text/css" href="app/css/app-style.css">
+
+    <!--[if lte IE 8]>
+      <link rel="stylesheet" type="text/css" href="library/foundation/css/social_foundicons_ie7.css">
+      <link rel="stylesheet" type="text/css" href="library/foundation/css/general_foundicons_ie7.css">
+
+      <script type="text/javascript" src="library/common/js/json.js"></script>
+    <![endif]-->
+    
+    <script type="text/javascript" src="library/common/js/modernize.js"></script>
+
+  </head>
+  <body ng-controller="MainCtrl as main">
+
+    <div class="contain-to-grid">
+      <nav class="top-bar">
+        <ul class="title-area">
+          <li class="name">
+            <h1><a href="/"><%= brand %></a></h1>
+          </li>
+          <li class="toggle-topbar menu-icon"><a href="/#/"><span>Menu</span></a></li>
+        </ul>
+
+        <section class="top-bar-section">
+          <ul class="right">
+            <li class="divider"></li>
+            <li><a href="/OpenShift">OpenShift</a></li>
+            <li class="divider"></li>
+            <li><a href="/Node">Node.js</a></li>
+            <li class="divider"></li>
+            <li><a href="/Angular">Angular.js</a></li>
+            <li class="divider"></li>
+            <li><a href="/Foundation">Foundation</a></li>
+            <li class="divider"></li>
+          </ul> 
+        </section>
+      </nav>
+    </div>
+
+<div ng-view>
+<%- body %>
+</div>
+
+    <footer class="row">
+      <div class="large-12 columns"><hr>
+          <div class="row">
+
+            <div class="large-6 columns">
+                <p>Node: <%= version %> - Mode: <%= mode %></p>
+            </div>
+
+            <div class="large-6 small-12 columns">
+                <ul class="inline-list right">
+                  <li>Test Pages:</li>
+                  <li><a href="/">Link 1</a></li>
+                  <li><a href="/">Link 2</a></li>
+                  <li><a href="/#/NotFound">Not found</a></li>
+                </ul>
+            </div>
+
+          </div>
+      </div>
+    </footer>
+
+    <!--[if IE]>
+    <script type="text/javascript" src="library/common/js/jquery.js"></script>
+    <![endif]-->
+    <![if !IE]>
+    <script type="text/javascript" src="library/common/js/zepto.js"></script>
+    <![endif]>
+
+    <script type="text/javascript" src="library/foundation/js/foundation.js"></script>
+    <script type="text/javascript" src="library/foundation/js/foundation.topbar.js"></script>
+    <script type="text/javascript" src="library/foundation/js/foundation.dropdown.js"></script>
+
+    <script type="text/javascript" src="library/angular/angular.js"></script>
+    <script type="text/javascript" src="library/angular/angular-route.js"></script>
+    <script type="text/javascript" src="library/angular/angular-animate.js"></script>
+
+    <script type="text/javascript" src="app/js/app.js"></script>
+    <script type="text/javascript" src="app/js/app-filters.js"></script>
+    <script type="text/javascript" src="app/js/app-services.js"></script>
+    <script type="text/javascript" src="app/js/app-directives.js"></script>
+    <script type="text/javascript" src="app/js/app-controlers.js"></script>
+
+  </body>
+</html> 

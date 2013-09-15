@@ -1,0 +1,37 @@
+#!/bin/bash
+
+# The pre_start_cartridge and pre_stop_cartridge hooks are *SOURCED*
+# immediately before (re)starting or stopping the specified cartridge.
+# They are able to make any desired environment variable changes as
+# well as other adjustments to the application environment.
+
+# The post_start_cartridge and post_stop_cartridge hooks are executed
+# immediately after (re)starting or stopping the specified cartridge.
+
+# Exercise caution when adding commands to these hooks.  They can
+# prevent your application from stopping cleanly or starting at all.
+# Application start and stop is subject to different timeouts
+# throughout the system.
+
+echo
+echo ":: Pre-Start"
+
+#  Source utility functions.
+source "$OPENSHIFT_REPO_DIR/.openshift/tools/custom_nodejs_version"
+
+#  Setup path to include the custom Nodejs version.
+ver=$(get_node_version)
+echo "  - Add Node.js version $ver binaries to path"
+setup_path_for_custom_node_version
+
+#  Export basic variables
+export NODE_ENV=development
+
+#  Include private env variables from a file in the 
+#  data directory of OpenShift. This directory is shared
+#  between different instances when your application is 
+#  set to scale. Sins the file might contains sensitive
+#  data it does not belong in any git repo.
+#source "$OPENSHIFT_DATA_DIR"/private_env_variables
+
+echo

@@ -1,0 +1,4 @@
+#Intro {text-align: center;}
+
+/* Hide ng-cloak elements */
+[ng\:cloak], [ng-cloak], .ng-cloak {display: none !important;}
