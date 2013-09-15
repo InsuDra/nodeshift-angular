@@ -44,9 +44,10 @@ serv.use(express.static('./public'));
 serv.use(function (req, res, next) {
   req.content = {
     brand: 'NodeShift - Angular.js',
-    mode: process.env.NODE_ENV,
+    mode: process.env.NODE_ENV || "Not set",
     title: 'OpenShift: Node + Angular',
-    version: process.version
+    version: process.version,
+    info: process.env.NODE_TEST_VAR || "No Info"
   };
 
   next();
