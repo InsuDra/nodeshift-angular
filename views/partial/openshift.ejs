@@ -9,11 +9,18 @@
   </div>
 
   <div class="row">
-    <div class="large-6 columns">
-      <h5 class="subheader">Targets:</h5>
-    </div>
-    <div class="large-6 columns">
+    <div class="large-5 large-offset-1 columns">
       <h5 class="subheader">Notes:</h5>
+      <ul>
+        <li>Variables that don't belong on a repo can be stored in the openshift data directory. (see pre start hook)</li>
+        <li>Using the 'web ui' or 'rhc app restart' to restart your application might break environment variables. (use rhc start/stop instaid)</li>
+      </ul>
+    </div>
+    <div class="large-5 pull-1 columns">
+      <h5 class="subheader">Targets:</h5>
+      <ul>
+        <li>Get environment variables to work properly.</li>
+      </ul>
     </div>
   </div>
 
